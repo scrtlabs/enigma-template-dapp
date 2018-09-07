@@ -1,0 +1,1199 @@
+{
+  "contractName": "MillionairesProblemFactory",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "enigmaAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x44f97995"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "millionairesProblems",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xb825519a"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_enigmaAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "createNewMillionairesProblem",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x7da8a0e7"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMillionairesProblems",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x37d7f938"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50604051602080610ab5833981016040525160008054600160a060020a03909216600160a060020a0319909216919091179055610a63806100526000396000f3006080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166337d7f938811461006657806344f97995146100cb5780637da8a0e7146100fc578063b825519a14610113575b600080fd5b34801561007257600080fd5b5061007b61012b565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100b757818101518382015260200161009f565b505050509050019250505060405180910390f35b3480156100d757600080fd5b506100e061018d565b60408051600160a060020a039092168252519081900360200190f35b34801561010857600080fd5b5061011161019c565b005b34801561011f57600080fd5b506100e0600435610245565b6060600180548060200260200160405190810160405280929190818152602001828054801561018357602002820191906000526020600020905b8154600160a060020a03168152600190910190602001808311610165575b5050505050905090565b600054600160a060020a031681565b60008054600160a060020a0316336101b261026d565b600160a060020a03928316815291166020820152604080519182900301906000f0801580156101e5573d6000803e3d6000fd5b506001805480820182556000919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039290921691909117905550565b600180548290811061025357fe5b600091825260209091200154600160a060020a0316905081565b6040516107ba8061027e833901905600608060405234801561001057600080fd5b506040516040806107ba83398101604052805160209091015160038054600160a060020a03928316600160a060020a03199182161790915560048054929093169116179055610756806100646000396000f30060806040526004361061008d5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663191a09c681146100925780633ad79816146100b957806347ce9402146100dc5780636c2506b7146101d25780638da5cb5b146102695780639f7ce8671461029a578063a8ff37c314610328578063b24fd5c51461033d575b600080fd5b34801561009e57600080fd5b506100a7610352565b60408051918252519081900360200190f35b3480156100c557600080fd5b506100da600160a060020a0360043516610358565b005b3480156100e857600080fd5b506100f46004356103c3565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b8381101561013557818101518382015260200161011d565b50505050905090810190601f1680156101625780820380516001836020036101000a031916815260200191505b50838103825284518152845160209182019186019080838360005b8381101561019557818101518382015260200161017d565b50505050905090810190601f1680156101c25780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b3480156101de57600080fd5b506040805160206004803580820135601f81018490048402850184019095528484526100da94369492936024939284019190819084018382808284375050604080516020601f89358b018035918201839004830284018301909452808352979a99988101979196509182019450925082915084018382808284375094975061053f9650505050505050565b34801561027557600080fd5b5061027e6105d5565b60408051600160a060020a039092168252519081900360200190f35b3480156102a657600080fd5b506040805160206004803580820135838102808601850190965280855261027e95369593946024949385019291829185019084908082843750506040805187358901803560208181028481018201909552818452989b9a9989019892975090820195509350839250850190849080828437509497506105e49650505050505050565b34801561033457600080fd5b5061027e61065a565b34801561034957600080fd5b5061027e610669565b60005481565b600454600160a060020a0316331461036f57600080fd5b6002805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790556040517ffa6b2fa56bfe305041a2170756c9ee87984e5078d2533f89642c6ded5ff6a90290600090a150565b6060806103ce610678565b6060806001868154811015156103e057fe5b60009182526020918290206040805160029384029092018054600181161561010002600019011693909304601f8101859004909402820160609081018252908201848152919384929184919084018282801561047d5780601f106104525761010080835404028352916020019161047d565b820191906000526020600020905b81548152906001019060200180831161046057829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561051f5780601f106104f45761010080835404028352916020019161051f565b820191906000526020600020905b81548152906001019060200180831161050257829003601f168201915b505050919092525050815160209092015191989197509095505050505050565b610547610678565b5060408051808201909152828152602080820183905260018054808201808355600092909252835180519293859360029093027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601926105aa928492019061068f565b5060208281015180516105c3926001850192019061068f565b50506000805460010190555050505050565b600354600160a060020a031681565b60008080805b84518110156106375781858281518110151561060257fe5b602090810290910101511061062f57848181518110151561061f57fe5b9060200190602002015191508092505b6001016105ea565b858381518110151561064557fe5b90602001906020020151935050505092915050565b600254600160a060020a031681565b600454600160a060020a031681565b604080518082019091526060808252602082015290565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106d057805160ff19168380011785556106fd565b828001600101855582156106fd579182015b828111156106fd5782518255916020019190600101906106e2565b5061070992915061070d565b5090565b61072791905b808211156107095760008155600101610713565b905600a165627a7a72305820843ff4ec7f5d3523de9c79cfa600075c0abed3d03cb86632e68103fe8d61a4900029a165627a7a7230582096e7ff0fdfb7bb0263f2199b000b9e17eaf8adf6873e1c4774e8375cea2f38cc0029",
+  "deployedBytecode": "0x6080604052600436106100615763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166337d7f938811461006657806344f97995146100cb5780637da8a0e7146100fc578063b825519a14610113575b600080fd5b34801561007257600080fd5b5061007b61012b565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100b757818101518382015260200161009f565b505050509050019250505060405180910390f35b3480156100d757600080fd5b506100e061018d565b60408051600160a060020a039092168252519081900360200190f35b34801561010857600080fd5b5061011161019c565b005b34801561011f57600080fd5b506100e0600435610245565b6060600180548060200260200160405190810160405280929190818152602001828054801561018357602002820191906000526020600020905b8154600160a060020a03168152600190910190602001808311610165575b5050505050905090565b600054600160a060020a031681565b60008054600160a060020a0316336101b261026d565b600160a060020a03928316815291166020820152604080519182900301906000f0801580156101e5573d6000803e3d6000fd5b506001805480820182556000919091527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039290921691909117905550565b600180548290811061025357fe5b600091825260209091200154600160a060020a0316905081565b6040516107ba8061027e833901905600608060405234801561001057600080fd5b506040516040806107ba83398101604052805160209091015160038054600160a060020a03928316600160a060020a03199182161790915560048054929093169116179055610756806100646000396000f30060806040526004361061008d5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663191a09c681146100925780633ad79816146100b957806347ce9402146100dc5780636c2506b7146101d25780638da5cb5b146102695780639f7ce8671461029a578063a8ff37c314610328578063b24fd5c51461033d575b600080fd5b34801561009e57600080fd5b506100a7610352565b60408051918252519081900360200190f35b3480156100c557600080fd5b506100da600160a060020a0360043516610358565b005b3480156100e857600080fd5b506100f46004356103c3565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b8381101561013557818101518382015260200161011d565b50505050905090810190601f1680156101625780820380516001836020036101000a031916815260200191505b50838103825284518152845160209182019186019080838360005b8381101561019557818101518382015260200161017d565b50505050905090810190601f1680156101c25780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b3480156101de57600080fd5b506040805160206004803580820135601f81018490048402850184019095528484526100da94369492936024939284019190819084018382808284375050604080516020601f89358b018035918201839004830284018301909452808352979a99988101979196509182019450925082915084018382808284375094975061053f9650505050505050565b34801561027557600080fd5b5061027e6105d5565b60408051600160a060020a039092168252519081900360200190f35b3480156102a657600080fd5b506040805160206004803580820135838102808601850190965280855261027e95369593946024949385019291829185019084908082843750506040805187358901803560208181028481018201909552818452989b9a9989019892975090820195509350839250850190849080828437509497506105e49650505050505050565b34801561033457600080fd5b5061027e61065a565b34801561034957600080fd5b5061027e610669565b60005481565b600454600160a060020a0316331461036f57600080fd5b6002805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790556040517ffa6b2fa56bfe305041a2170756c9ee87984e5078d2533f89642c6ded5ff6a90290600090a150565b6060806103ce610678565b6060806001868154811015156103e057fe5b60009182526020918290206040805160029384029092018054600181161561010002600019011693909304601f8101859004909402820160609081018252908201848152919384929184919084018282801561047d5780601f106104525761010080835404028352916020019161047d565b820191906000526020600020905b81548152906001019060200180831161046057829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561051f5780601f106104f45761010080835404028352916020019161051f565b820191906000526020600020905b81548152906001019060200180831161050257829003601f168201915b505050919092525050815160209092015191989197509095505050505050565b610547610678565b5060408051808201909152828152602080820183905260018054808201808355600092909252835180519293859360029093027fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601926105aa928492019061068f565b5060208281015180516105c3926001850192019061068f565b50506000805460010190555050505050565b600354600160a060020a031681565b60008080805b84518110156106375781858281518110151561060257fe5b602090810290910101511061062f57848181518110151561061f57fe5b9060200190602002015191508092505b6001016105ea565b858381518110151561064557fe5b90602001906020020151935050505092915050565b600254600160a060020a031681565b600454600160a060020a031681565b604080518082019091526060808252602082015290565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106d057805160ff19168380011785556106fd565b828001600101855582156106fd579182015b828111156106fd5782518255916020019190600101906106e2565b5061070992915061070d565b5090565b61072791905b808211156107095760008155600101610713565b905600a165627a7a72305820843ff4ec7f5d3523de9c79cfa600075c0abed3d03cb86632e68103fe8d61a4900029a165627a7a7230582096e7ff0fdfb7bb0263f2199b000b9e17eaf8adf6873e1c4774e8375cea2f38cc0029",
+  "sourceMap": "64:699:2:-;;;241:82;8:9:-1;5:2;;;30:1;27;20:12;5:2;241:82:2;;;;;;;;;;;;;288:13;:30;;-1:-1:-1;;;;;288:30:2;;;-1:-1:-1;;;;;;288:30:2;;;;;;;;;64:699;;;;;;",
+  "deployedSourceMap": "64:699:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;656:103;;8:9:-1;5:2;;;30:1;27;20:12;5:2;656:103:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;656:103:2;;;;;;;;;;;;;;;;;103:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;103:28:2;;;;;;;;-1:-1:-1;;;;;103:28:2;;;;;;;;;;;;;;389:203;;8:9:-1;5:2;;;30:1;27;20:12;5:2;389:203:2;;;;;;199:37;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;199:37:2;;;;;656:103;712:9;734:20;727:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;727:27:2;;;;;;;;;;;;;;;;;;;;;;;656:103;:::o;103:28::-;;;-1:-1:-1;;;;;103:28:2;;:::o;389:203::-;440:30;501:13;;-1:-1:-1;;;;;501:13:2;520:10;473:61;;:::i;:::-;-1:-1:-1;;;;;473:61:2;;;;;;;;;;;;;;;;;;;;-1:-1:-1;473:61:2;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;538:20:2;27:10:-1;;23:18;;;45:23;;-1:-1;538:49:2;;;;;;;;-1:-1:-1;;538:49:2;-1:-1:-1;;;;;538:49:2;;;;;;;;;;-1:-1:-1;389:203:2:o;199:37::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;199:37:2;;-1:-1:-1;199:37:2;:::o;64:699::-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17; \nimport \"./MillionairesProblem.sol\";\n\n\ncontract MillionairesProblemFactory {\n\taddress public enigmaAddress; \n\t// List of addresses for deployed MillionaireProblem instances\n\taddress[] public millionairesProblems; \n\n\tconstructor(address _enigmaAddress) public {\n\t\tenigmaAddress = _enigmaAddress; \n\t}\n\n\t// Create a new MillionaireProblem and store address to array\n\tfunction createNewMillionairesProblem() public {\n\t\taddress newMillionairesProblem = new MillionairesProblem(\n\t\t\tenigmaAddress, \n\t\t\tmsg.sender\n\t\t);\n\t\tmillionairesProblems.push(newMillionairesProblem); \n\t}\n\n\t// Obtain list of all deployed MillionaireProblem instances\n\tfunction getMillionairesProblems() public view returns (address[]) {\n\t\treturn millionairesProblems; \n\t}\t \n}",
+  "sourcePath": "/Users/adityapalepu/Startups/enigma/enigma-template-dapp/contracts/MillionairesProblemFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/adityapalepu/Startups/enigma/enigma-template-dapp/contracts/MillionairesProblemFactory.sol",
+    "exportedSymbols": {
+      "MillionairesProblemFactory": [
+        273
+      ]
+    },
+    "id": 274,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 228,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "absolutePath": "/Users/adityapalepu/Startups/enigma/enigma-template-dapp/contracts/MillionairesProblem.sol",
+        "file": "./MillionairesProblem.sol",
+        "id": 229,
+        "nodeType": "ImportDirective",
+        "scope": 274,
+        "sourceUnit": 227,
+        "src": "26:35:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          226
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 273,
+        "linearizedBaseContracts": [
+          273
+        ],
+        "name": "MillionairesProblemFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 231,
+            "name": "enigmaAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 273,
+            "src": "103:28:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 230,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "103:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 234,
+            "name": "millionairesProblems",
+            "nodeType": "VariableDeclaration",
+            "scope": 273,
+            "src": "199:37:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 232,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "199:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 233,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "199:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 243,
+              "nodeType": "Block",
+              "src": "284:39:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 241,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 239,
+                      "name": "enigmaAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "288:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 240,
+                      "name": "_enigmaAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 236,
+                      "src": "304:14:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "288:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 242,
+                  "nodeType": "ExpressionStatement",
+                  "src": "288:30:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 244,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 237,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 236,
+                  "name": "_enigmaAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 244,
+                  "src": "253:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "252:24:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 238,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "284:0:2"
+            },
+            "scope": 273,
+            "src": "241:82:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 262,
+              "nodeType": "Block",
+              "src": "436:156:2",
+              "statements": [
+                {
+                  "assignments": [
+                    248
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 248,
+                      "name": "newMillionairesProblem",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 263,
+                      "src": "440:30:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 247,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "440:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 255,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 251,
+                        "name": "enigmaAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 231,
+                        "src": "501:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 252,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 288,
+                          "src": "520:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 253,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "520:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 250,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "473:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_address_$returns$_t_contract$_MillionairesProblem_$226_$",
+                        "typeString": "function (address,address) returns (contract MillionairesProblem)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 249,
+                        "name": "MillionairesProblem",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 226,
+                        "src": "477:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_MillionairesProblem_$226",
+                          "typeString": "contract MillionairesProblem"
+                        }
+                      }
+                    },
+                    "id": 254,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "473:61:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_MillionairesProblem_$226",
+                      "typeString": "contract MillionairesProblem"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "440:94:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 259,
+                        "name": "newMillionairesProblem",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 248,
+                        "src": "564:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 256,
+                        "name": "millionairesProblems",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 234,
+                        "src": "538:20:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 258,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "538:25:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 260,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "538:49:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 261,
+                  "nodeType": "ExpressionStatement",
+                  "src": "538:49:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 263,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createNewMillionairesProblem",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 245,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "426:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 246,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "436:0:2"
+            },
+            "scope": 273,
+            "src": "389:203:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 271,
+              "nodeType": "Block",
+              "src": "723:36:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 269,
+                    "name": "millionairesProblems",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 234,
+                    "src": "734:20:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 268,
+                  "id": 270,
+                  "nodeType": "Return",
+                  "src": "727:27:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 272,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMillionairesProblems",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "688:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 267,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 272,
+                  "src": "712:9:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 265,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "712:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 266,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "712:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "711:11:2"
+            },
+            "scope": 273,
+            "src": "656:103:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 274,
+        "src": "64:699:2"
+      }
+    ],
+    "src": "0:763:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/adityapalepu/Startups/enigma/enigma-template-dapp/contracts/MillionairesProblemFactory.sol",
+    "exportedSymbols": {
+      "MillionairesProblemFactory": [
+        273
+      ]
+    },
+    "id": 274,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 228,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "absolutePath": "/Users/adityapalepu/Startups/enigma/enigma-template-dapp/contracts/MillionairesProblem.sol",
+        "file": "./MillionairesProblem.sol",
+        "id": 229,
+        "nodeType": "ImportDirective",
+        "scope": 274,
+        "sourceUnit": 227,
+        "src": "26:35:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          226
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 273,
+        "linearizedBaseContracts": [
+          273
+        ],
+        "name": "MillionairesProblemFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 231,
+            "name": "enigmaAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 273,
+            "src": "103:28:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 230,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "103:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 234,
+            "name": "millionairesProblems",
+            "nodeType": "VariableDeclaration",
+            "scope": 273,
+            "src": "199:37:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 232,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "199:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 233,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "199:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 243,
+              "nodeType": "Block",
+              "src": "284:39:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 241,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 239,
+                      "name": "enigmaAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "288:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 240,
+                      "name": "_enigmaAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 236,
+                      "src": "304:14:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "288:30:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 242,
+                  "nodeType": "ExpressionStatement",
+                  "src": "288:30:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 244,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 237,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 236,
+                  "name": "_enigmaAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 244,
+                  "src": "253:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "252:24:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 238,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "284:0:2"
+            },
+            "scope": 273,
+            "src": "241:82:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 262,
+              "nodeType": "Block",
+              "src": "436:156:2",
+              "statements": [
+                {
+                  "assignments": [
+                    248
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 248,
+                      "name": "newMillionairesProblem",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 263,
+                      "src": "440:30:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 247,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "440:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 255,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 251,
+                        "name": "enigmaAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 231,
+                        "src": "501:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 252,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 288,
+                          "src": "520:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 253,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "520:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 250,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "473:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_address_$returns$_t_contract$_MillionairesProblem_$226_$",
+                        "typeString": "function (address,address) returns (contract MillionairesProblem)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 249,
+                        "name": "MillionairesProblem",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 226,
+                        "src": "477:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_MillionairesProblem_$226",
+                          "typeString": "contract MillionairesProblem"
+                        }
+                      }
+                    },
+                    "id": 254,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "473:61:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_MillionairesProblem_$226",
+                      "typeString": "contract MillionairesProblem"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "440:94:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 259,
+                        "name": "newMillionairesProblem",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 248,
+                        "src": "564:22:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 256,
+                        "name": "millionairesProblems",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 234,
+                        "src": "538:20:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 258,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "538:25:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 260,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "538:49:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 261,
+                  "nodeType": "ExpressionStatement",
+                  "src": "538:49:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 263,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createNewMillionairesProblem",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 245,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "426:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 246,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "436:0:2"
+            },
+            "scope": 273,
+            "src": "389:203:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 271,
+              "nodeType": "Block",
+              "src": "723:36:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 269,
+                    "name": "millionairesProblems",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 234,
+                    "src": "734:20:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                      "typeString": "address[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 268,
+                  "id": 270,
+                  "nodeType": "Return",
+                  "src": "727:27:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 272,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getMillionairesProblems",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "688:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 267,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 272,
+                  "src": "712:9:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 265,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "712:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 266,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "712:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "711:11:2"
+            },
+            "scope": 273,
+            "src": "656:103:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 274,
+        "src": "64:699:2"
+      }
+    ],
+    "src": "0:763:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1536355190285": {
+      "events": {},
+      "links": {},
+      "address": "0xC018dc284BDEdF94E79076517275E35E6F5607Db",
+      "transactionHash": "0x053104e5bf4e78353f48d7391486f7ba935e2f922abd88e26b9cc219414003fc"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-09-07T21:30:28.614Z"
+}
