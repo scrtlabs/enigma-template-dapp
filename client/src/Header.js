@@ -34,7 +34,7 @@ class Header extends Component {
 							color="inherit"
 							className={classes.flex}
 						>
-							Enigma Template DApp
+							Enigma Voting DApp
 						</Typography>
 					</Toolbar>
 				</AppBar>
