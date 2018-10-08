@@ -123,6 +123,7 @@ class AddMillionaireDialog extends Component {
                 </InputLabel>
                 <Input
                   id="millionaireNetWorth"
+                  type="number"
                   onChange={this.handleChangeNetWorth}
                   autoComplete="off"
                 />

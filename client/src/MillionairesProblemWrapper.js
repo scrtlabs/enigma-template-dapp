@@ -54,7 +54,9 @@ class MillionairesProblemWrapper extends Component {
 	*/
 	async addMillionaire(address, netWorth) {
 		let encryptedAddress = getEncryptedValue(address);
-		let encryptedNetWorth = getEncryptedValue(netWorth);
+		let encryptedNetWorth = getEncryptedValue(
+			this.props.enigmaSetup.web3.utils.toBN(netWorth)
+		);
 		await this.props.millionairesProblem.addMillionaire(
 			encryptedAddress,
 			encryptedNetWorth,
