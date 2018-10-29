@@ -46,7 +46,7 @@ contract Voting {
   }
 
   /* STATE VARIABLES */
-  mapping(uint => Poll) public polls;
+  Poll[] public polls;
   mapping(address => TokenManager) public bank;
   uint public pollCount;
   VotingToken public token;
@@ -68,17 +68,16 @@ contract Voting {
   function createPoll(uint _quorumPct, string _description, uint _voteLength) external returns (uint){
     require(_quorumPct <= 100, "Quorum Percentage must be less than or equal to 100%");
     require(_voteLength > 0, "The voting period cannot be 0.");
-    pollCount++;
-
-    Poll storage curPoll = polls[pollCount];
+    Poll memory curPoll;
     curPoll.creator = msg.sender;
     curPoll.status = PollStatus.IN_PROGRESS;
     curPoll.quorumPercentage = _quorumPct;
-    curPoll.expirationTime = now + _voteLength * 1 seconds;
     curPoll.description = _description;
-
-    emit pollCreated(msg.sender, pollCount, _quorumPct, _description, _voteLength);
-    return pollCount;
+    curPoll.expirationTime = now + _voteLength * 1 seconds;
+    polls.push(curPoll);
+    pollCount++; 
+    emit pollCreated(msg.sender, pollCount, _quorumPct, _description, _voteLength); 
+    return pollCount; 
   }
 
   /*
@@ -96,7 +95,6 @@ contract Voting {
    * NOTE: Only the Enigma contract can call this function.
    */
   function updatePollStatus(uint _pollID, uint _yeaVotes, uint _nayVotes) public validPoll(_pollID) onlyEnigma() {
-    require(getPollStatus(_pollID) == PollStatus.TALLY, "Poll has not expired yet.");
     Poll storage curPoll = polls[_pollID];
     curPoll.yeaVotes = _yeaVotes;
     curPoll.nayVotes = _nayVotes;
@@ -139,7 +137,6 @@ contract Voting {
    * Gets a voter's encrypted vote and weight for a given expired poll.
    */
   function getPollInfoForVoter(uint _pollID, address _voter) public view validPoll(_pollID) returns (bytes, uint) {
-    require(getPollStatus(_pollID) != PollStatus.IN_PROGRESS);
     require(userHasVoted(_pollID, _voter));
     Poll storage curPoll = polls[_pollID];
     bytes vote = curPoll.voterInfo[_voter].vote;
@@ -151,7 +148,6 @@ contract Voting {
    * Gets all the voters of a poll.
    */
   function getVotersForPoll(uint _pollID) public view validPoll(_pollID) returns (address[]) {
-    require(getPollStatus(_pollID) != PollStatus.IN_PROGRESS);
     return polls[_pollID].voters;
   }
 
@@ -159,7 +155,7 @@ contract Voting {
    * Modifier that checks for a valid poll ID.
    */
   modifier validPoll(uint _pollID) {
-    require(_pollID > 0 && _pollID <= pollCount, "Not a valid poll Id.");
+    require(_pollID >= 0 && _pollID < pollCount, "Not a valid poll Id.");
     _;
   }
 
@@ -182,6 +178,7 @@ contract Voting {
     require(!userHasVoted(_pollID, msg.sender), "User has already voted.");
     require(getPollExpirationTime(_pollID) > now);
     require(getTokenStake(msg.sender) >= _weight, "User does not have enough staked tokens.");
+    require(_weight > 0, "User must add a weight for the vote"); 
 
     // update token bank
     bank[msg.sender].lockedTokens[_pollID] = _weight;

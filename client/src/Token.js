@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Alert from "./Alert.js";
 import "./App.css";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -8,8 +7,9 @@ import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Notifier, { openSnackbar } from "./Notifier";
 
-const GAS = 4712388;
+const GAS = "1000000";
 
 const styles = theme => ({
   button: {
@@ -22,144 +22,135 @@ const styles = theme => ({
 });
 
 class Token extends Component {
-  /* CONSTRUCTOR */
   constructor(props) {
     super(props);
-    this.curTokenPurchase;
-    this.withdrawValue;
-    this.stakeAmount;
-    this.alert = React.createRef();
+    this.state = {
+      curTokenPurchase: 0,
+      withdrawValue: 0,
+      stakeAmount: 0
+    };
     this.tokenPurchase = this.tokenPurchase.bind(this);
     this.withdraw = this.withdraw.bind(this);
     this.stakeTokens = this.stakeTokens.bind(this);
+    this.handleChangeTokenPurchase = this.handleChangeTokenPurchase.bind(this);
+    this.handleChangeStakeAmount = this.handleChangeStakeAmount.bind(this);
+    this.handleChangeWithdrawValue = this.handleChangeWithdrawValue.bind(this);
+  }
+
+  // onChange listener to update state with user-input token purchase amount
+  handleChangeTokenPurchase(event) {
+    this.setState({ curTokenPurchase: parseInt(event.target.value) });
+  }
+  // onChange listener to update state with user-input stake amount
+  handleChangeStakeAmount(event) {
+    this.setState({ stakeAmount: parseInt(event.target.value) });
+  }
+  // onChange listener to update state with user-input withdraw value
+  handleChangeWithdrawValue(event) {
+    this.setState({ withdrawValue: parseInt(event.target.value) });
   }
 
   /*
-   * Purchase tokens.
-   */
+  Allow user to purchase tokens
+  */
   async tokenPurchase(event) {
     if (event) event.preventDefault();
 
-    // Contribute to the Mintable Token Factory
-    console.log("Contribute to the crowdsale");
-    this.props.tokenFactory
-      .contribute({
+    try {
+      await this.props.tokenFactory.contribute({
         from: this.props.enigmaSetup.accounts[this.props.curAccount],
         value: this.props.enigmaSetup.web3.utils.toWei(
-          String(this.curTokenPurchase.value / 10),
+          String(this.state.curTokenPurchase / 10),
           "ether"
         ),
         gas: GAS
-      })
-      .then(result => {
-        console.log("Update the state token balances");
-        // Update the App state
-        let balances = this.props.tokenBalances;
-        balances[this.props.curAccount] =
-          parseInt(this.props.tokenBalances[this.props.curAccount]) +
-          parseInt(this.curTokenPurchase.value);
-        this.props.updateToken(balances);
-
-        this.alert.current.openAlert("You have successfully purchased tokens.");
-        document.getElementById("token_form").reset();
-      })
-      .catch(error => {
-        this.alert.current.openAlert(
-          "User does not have enough Ether. Please enter a smaller amount."
-        );
       });
+      let tokenBalance = this.props.tokenBalance + this.state.curTokenPurchase;
+      this.props.updateToken(tokenBalance);
+
+      openSnackbar({ message: "You have successfully purchased tokens." });
+      document.getElementById("token_form").reset();
+    } catch (e) {
+      console.log(e);
+      openSnackbar({ message: e });
+    }
   }
 
   /*
-   * Allow a user to withdraw tokens.
-   */
-  withdraw(event) {
+  Allow user to withdraw tokens
+  */
+  async withdraw(event) {
     if (event) event.preventDefault();
     // withdraw tokens
-    let amount = this.props.enigmaSetup.web3.utils.toWei(
-      this.withdrawValue.value,
-      "ether"
-    );
-    return this.props.voting
-      .withdrawTokens(String(amount), {
+
+    try {
+      let amount = this.props.enigmaSetup.web3.utils.toWei(
+        String(this.state.withdrawValue),
+        "ether"
+      );
+      await this.props.voting.withdrawTokens(amount, {
         from: this.props.enigmaSetup.accounts[this.props.curAccount],
         gas: GAS
-      })
-      .then(result => {
-        // update the app state
-        let balances = this.props.tokenBalances;
-        balances[this.props.curAccount] += parseInt(this.withdrawValue.value);
-        this.props.updateToken(balances);
-
-        let staked = this.props.stakedTokens;
-        staked[this.props.curAccount] -= parseInt(this.withdrawValue.value);
-        this.props.updateStake(staked);
-
-        this.alert.current.openAlert("You have successfully withdrawn tokens.");
-        document.getElementById("withdraw_form").reset();
-      })
-      .catch(error => {
-        console.log(error);
-        this.alert.current.openAlert(
-          "You are trying to withdraw too many tokens."
-        );
       });
+      let balance = this.props.tokenBalance + this.state.withdrawValue;
+      this.props.updateToken(balance);
+
+      let staked = this.props.stakedTokenBalance - this.state.withdrawValue;
+      this.props.updateStake(staked);
+
+      openSnackbar({ message: "You have successfully withdrawn tokens." });
+      document.getElementById("withdraw_form").reset();
+    } catch (e) {
+      console.log(e);
+      openSnackbar({ message: e });
+    }
   }
 
-  stakeTokens(event) {
+  /*
+  Allow user to stake tokens to voting contract
+  */
+  async stakeTokens(event) {
     if (event) event.preventDefault();
-    // approve transfer
-    this.props.votingToken
-      .approve(
+    try {
+      // Approve transfer
+      await this.props.votingToken.approve(
         this.props.voting.address,
         this.props.enigmaSetup.web3.utils.toWei(
-          this.stakeAmount.value,
+          String(this.state.stakeAmount),
           "ether"
         ),
         {
           from: this.props.enigmaSetup.accounts[this.props.curAccount],
           gas: GAS
         }
-      )
-      .then(result => {
-        // stake tokens
-        let amount = this.props.enigmaSetup.web3.utils.toWei(
-          this.stakeAmount.value,
-          "ether"
-        );
-        return this.props.voting.stakeVotingTokens(String(amount), {
-          from: this.props.enigmaSetup.accounts[this.props.curAccount],
-          gas: GAS
-        });
-      })
-      .then(result => {
-        // update the app state
-
-        // update token balance
-        let balances = this.props.tokenBalances;
-        balances[this.props.curAccount] -= parseInt(this.stakeAmount.value);
-        this.props.updateToken(balances);
-
-        // update staked token balance
-        let staked = this.props.stakedTokens;
-        staked[this.props.curAccount] += parseInt(this.stakeAmount.value);
-        this.props.updateStake(staked);
-
-        this.alert.current.openAlert("You have successfully staked tokens.");
-        document.getElementById("stake_form").reset();
-      })
-      .catch(error => {
-        console.log(error);
-        this.alert.current.openAlert(
-          "You are trying to stake too many tokens."
-        );
+      );
+      let amount = this.props.enigmaSetup.web3.utils.toWei(
+        String(this.state.stakeAmount),
+        "ether"
+      );
+      await this.props.voting.stakeVotingTokens(parseInt(amount), {
+        from: this.props.enigmaSetup.accounts[this.props.curAccount],
+        gas: GAS
       });
+      let balance = this.props.tokenBalance - this.state.stakeAmount;
+      this.props.updateToken(balance);
+
+      // update staked token balance
+      let staked = this.props.stakedTokenBalance + this.state.stakeAmount;
+      this.props.updateStake(staked);
+      openSnackbar({ message: "You have successfully staked tokens." });
+      document.getElementById("stake_form").reset();
+    } catch (e) {
+      console.log(e);
+      openSnackbar({ message: e });
+    }
   }
 
   render() {
     const { classes } = this.props;
     return (
       <div>
+        <Notifier />
         <h3> Tokens Operations: </h3>
         <List component="nav" disablePadding={true}>
           <ListItem>
@@ -168,7 +159,7 @@ class Token extends Component {
               <TextField
                 className={classes.textField}
                 placeholder="Amount"
-                inputRef={element => (this.curTokenPurchase = element)}
+                onChange={this.handleChangeTokenPurchase}
               />
               <Button
                 className={classes.button}
@@ -188,7 +179,7 @@ class Token extends Component {
               <TextField
                 className={classes.textField}
                 placeholder="Amount"
-                inputRef={element => (this.stakeAmount = element)}
+                onChange={this.handleChangeStakeAmount}
               />
               <Button
                 className={classes.button}
@@ -208,7 +199,7 @@ class Token extends Component {
               <TextField
                 className={classes.textField}
                 placeholder="Amount"
-                inputRef={element => (this.withdrawValue = element)}
+                onChange={this.handleChangeWithdrawValue}
               />
               <Button
                 className={classes.button}
@@ -221,8 +212,6 @@ class Token extends Component {
             </form>
           </ListItem>
         </List>
-
-        <Alert ref={this.alert} />
       </div>
     );
   }
