@@ -188,6 +188,12 @@ class Polls extends Component {
       const { polls } = this.state;
       polls[pollID].userHasVoted = true;
       this.setState({ polls });
+      console.log(
+        "User (" +
+          this.props.enigmaSetup.accounts[this.props.curAccount] +
+          ") has voted with this encrypted vote: " +
+          encryptedVote
+      );
     } catch (e) {
       console.log(e);
       openSnackbar({ message: e });
