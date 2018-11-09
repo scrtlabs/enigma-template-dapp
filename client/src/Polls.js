@@ -22,6 +22,7 @@ import AddPoll from "./AddPoll";
 import Timer from "./Timer";
 import Notifier, { openSnackbar } from "./Notifier";
 const engUtils = require("./lib/enigma-utils");
+// Specify signatures of callable/callback functions (with no spaces!)
 const CALLABLE = "countVotes(uint,uint[],uint[])";
 const CALLBACK = "updatePollStatus(uint,uint,uint)";
 const ENG_FEE = 1;
@@ -209,18 +210,21 @@ class Polls extends Component {
       gas: GAS
     });
     let pollCreator = poll[0];
+    // Get list of voters from contract given pollID
     let voters = await this.props.voting.getVotersForPoll.call(pollID, {
       from: pollCreator,
       gas: GAS
     });
+    // Initialize empty encryptedVotes and weights arrays
     let encryptedVotes = [];
     let weights = [];
     if (voters.length === 0) {
       encryptedVotes.push(getEncryptedValue(0));
       weights.push(0);
     }
-    // get votes and weights for each voter
+    // Loop through all the voters
     for (let i = 0; i < voters.length; i++) {
+      // Obtain poll info (encrypted vote and weight) for that voter
       let pollInfoForVoter = await this.props.voting.getPollInfoForVoter.call(
         pollID,
         voters[i],
@@ -229,6 +233,7 @@ class Polls extends Component {
           gas: GAS
         }
       );
+      // Add encrypted vote to encryptedVotes array
       encryptedVotes.push(pollInfoForVoter[0]);
       let weight = this.props.enigmaSetup.web3.utils.toBN(
         this.props.enigmaSetup.web3.utils.fromWei(
@@ -236,6 +241,7 @@ class Polls extends Component {
           "Ether"
         )
       );
+      // Add weight to weights array
       weights.push(weight);
     }
 
@@ -277,7 +283,7 @@ class Polls extends Component {
   async handleTimerEnd(pollID) {
     const { polls } = this.state;
     await this.enigmaTask(pollID);
-    const pollStatusUpdateEvent = this.props.voting.pollStatusUpdate();
+    const pollStatusUpdateEvent = this.props.voting.PollStatusUpdate();
     pollStatusUpdateEvent.watch(async (error, result) => {
       let pollStatus = await this.props.voting.getPollStatus.call(pollID, {
         from: this.props.enigmaSetup.accounts[this.props.curAccount],
@@ -363,8 +369,6 @@ class Polls extends Component {
                           pollID={n.id}
                           onCompletion={this.handleTimerEnd}
                         />
-                      ) : n.status === 1 ? (
-                        "Tallying"
                       ) : (
                         "Poll Expired"
                       )}
@@ -374,7 +378,7 @@ class Polls extends Component {
                         <Tooltip title="Poll pending">
                           <AutorenewIcon />
                         </Tooltip>
-                      ) : n.status == 2 ? (
+                      ) : n.status == 1 ? (
                         <Tooltip title="Poll passed">
                           <CheckCircleIcon style={{ color: "green" }} />
                         </Tooltip>

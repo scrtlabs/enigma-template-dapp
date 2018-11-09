@@ -4,7 +4,6 @@ import EnigmaSetup from "./utils/getEnigmaSetup";
 import { Container, Message } from "semantic-ui-react";
 import Header from "./Header";
 import "./App.css";
-import Instructions from "./Instructions";
 import VotingWrapper from "./VotingWrapper";
 // Material UI Components
 import PropTypes from "prop-types";
@@ -72,7 +71,6 @@ class App extends Component {
       return (
         <div className="App">
           <Header />
-          <Instructions />
           <br />
           <Container>
             <VotingWrapper

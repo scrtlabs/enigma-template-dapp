@@ -1,8 +1,5 @@
-// TokenFactory.sol
-// Enigma, 2018
-// Mint voting tokens from a simple crowdsale.
-
 pragma solidity ^0.4.24;
+
 
 import "./VotingToken.sol";
 
@@ -14,22 +11,19 @@ contract TokenFactory {
   // NOTE: defines number of tokens minted, not ether spent
   event Contribution(address contributer, uint amount);
 
-  /*
-   * The constructor intializes a VotingToken.
-   */
+  // Constructor to initialize new voting token
   constructor(address _token) public {
     owner = msg.sender;
     token = VotingToken(_token);
   }
 
-  /*
-   * Allow a user to pay for voting tokens.
-   */
+  // Allow a user to pay for voting tokens with ether
   function contribute() external payable {
     require(msg.value > 0, "User sent no ether.");
-    owner.transfer(msg.value);  // transfer the Ether to the owner
-    uint amount = msg.value * 10;  // define an arbitrary exchange rate
-    token.mint(msg.sender, amount);  // mint tokens
+    owner.transfer(msg.value);  
+    // Arbitrary exchange rate of 10 voting tokens for 1 ETH
+    uint amount = msg.value * 10;  
+    token.mint(msg.sender, amount); 
     totalMinted += amount;
     emit Contribution(msg.sender, amount);
   }
@@ -37,5 +31,4 @@ contract TokenFactory {
   function() external payable {
     revert();
   }
-
 }
