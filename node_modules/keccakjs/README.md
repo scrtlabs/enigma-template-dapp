@@ -15,7 +15,7 @@ const keccak = require('keccakjs')
 
 var hash = new keccak() // uses 512 bits by default
 hash.update('hello')
-hash.update(new Buffer('42004200', 'hex'))
+hash.update(Buffer.from('42004200', 'hex'))
 hash.digest() // binary output
 hash.digest('hex') // hex output
 ```
