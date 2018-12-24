@@ -2,11 +2,11 @@ const web3Utils = require("web3-utils");
 const engUtils = require("./enigma-utils");
 const RLP = require("rlp");
 
-const Preprocessor = {
+export const Preprocessor = {
     RAND: "rand()"
 };
 
-class Task {
+export class Task {
     /**
      * Creates a stateful object representing a given computation task.
      *
@@ -217,7 +217,7 @@ class Task {
     }
 }
 
-class Enigma {
+export class Enigma {
     /**
      * Instantiate with a Truffle Contract representation of the deployed
      * Enigma contract.
@@ -395,7 +395,3 @@ class Enigma {
         });
     }
 }
-
-exports.Enigma = Enigma;
-exports.Task = Task;
-exports.Preprocessor = Preprocessor;
