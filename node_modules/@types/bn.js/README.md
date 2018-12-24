@@ -1,0 +1,16 @@
+# Installation
+> `npm install --save @types/bn.js`
+
+# Summary
+This package contains type definitions for bn.js (https://github.com/indutny/bn.js).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/bn.js
+
+Additional Details
+ * Last updated: Sat, 27 Oct 2018 01:45:33 GMT
+ * Dependencies: node
+ * Global values: none
+
+# Credits
+These definitions were written by Leonid Logvinov <https://github.com/LogvinovLeon>, Henry Nguyen <https://github.com/HenryNguyen5>.

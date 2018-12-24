@@ -9,7 +9,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "^2.1.2",
     "semantic-ui-css": "^2.3.2",
     "semantic-ui-react": "^0.81.2",
     "truffle-contract": "^3.0.5",
@@ -22,5 +22,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "link-contracts": "cd src && ln -s ../../build/contracts contracts"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

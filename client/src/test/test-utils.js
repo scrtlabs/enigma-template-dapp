@@ -4,7 +4,7 @@ const EthCrypto = require ('eth-crypto');
 
 const GAS_PRICE_GWEI = '2'; // To estimate current gas price: https://ethgasstation.info/
 
-class GasTracker {
+export class GasTracker {
     constructor (web3, gasPrice) {
         this.web3 = web3;
         this.gasUsed = [];
@@ -72,7 +72,7 @@ const PRINCIPAL = [
     '0xcf389bf0b861c1cb8906dfbad20db57ccd97ee8027f059fa00f604e6227f99c2', // The signer private key (always concealed in SGX)
 ];
 
-class Principal {
+export class Principal {
     constructor (contract, custodian) {
         this.contract = contract;
         this.params = PRINCIPAL;
@@ -115,6 +115,3 @@ class Principal {
         });
     }
 }
-
-exports.GasTracker = GasTracker;
-exports.Principal = Principal;
